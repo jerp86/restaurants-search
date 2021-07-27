@@ -39,14 +39,14 @@ const Home = () => {
 
           <CarouselTitle>Na sua Área</CarouselTitle>
           <Corousel {...settings}>
-            <ImageCard photo={restaurant} />
-            <ImageCard photo={restaurant2} />
-            <ImageCard photo={restaurant3} />
-            <ImageCard photo={restaurant4} />
-            <ImageCard photo={restaurant} />
-            <ImageCard photo={restaurant4} />
-            <ImageCard photo={restaurant3} />
-            <ImageCard photo={restaurant2} />
+            <ImageCard photo={restaurant} title="Nome sei lá" />
+            <ImageCard photo={restaurant2} title="Nome sei lá" />
+            <ImageCard photo={restaurant3} title="Nome sei lá" />
+            <ImageCard photo={restaurant4} title="Nome sei lá" />
+            <ImageCard photo={restaurant} title="Nome sei lá" />
+            <ImageCard photo={restaurant4} title="Nome sei lá" />
+            <ImageCard photo={restaurant3} title="Nome sei lá" />
+            <ImageCard photo={restaurant2} title="Nome sei lá" />
           </Corousel>
         </Search>
       </Container>
