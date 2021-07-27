@@ -5,6 +5,7 @@ const theme = {
     text: '#000000B3',
     success: '#135E01',
     white: '#FFFFFF',
+    star: '#E7711C',
   },
   fonts: {
     regular: 'Roboto, sans-serif',
