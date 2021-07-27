@@ -14,3 +14,25 @@ export const Restaurant = styled.div`
     border-left-color: ${({ theme }) => theme.colors.primary};
   }
 `;
+
+export const RestaurantInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Title = styled.span`
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: 8px;
+`;
+
+export const Address = styled.span`
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-size: 16px;
+  line-height: 19px;
+  color: ${({ theme }) => theme.colors.text};
+  margin-bottom: 8px;
+`;
