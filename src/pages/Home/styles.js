@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Slider from 'react-slick';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -22,6 +23,12 @@ export const Search = styled.section`
 
 export const Logo = styled.img`
   margin-bottom: 16px;
+`;
+
+export const Corousel = styled(Slider)`
+  .slick-slide {
+    margin-right: 16px;
+  }
 `;
 
 export const CarouselTitle = styled.h1`
