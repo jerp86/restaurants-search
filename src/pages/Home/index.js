@@ -8,7 +8,7 @@ import restaurant2 from '../../assets/restaurante-fake2.jpg';
 import restaurant3 from '../../assets/restaurante-fake3.jpg';
 import restaurant4 from '../../assets/restaurante-fake4.jpg';
 
-import { ImageCard } from '../../components';
+import { ImageCard, RestaurantCard } from '../../components';
 
 import { CarouselTitle, Container, Corousel, FutureMap, Logo, Search, Wrapper } from './styles';
 
@@ -49,6 +49,8 @@ const Home = () => {
             <ImageCard photo={restaurant2} title="Nome sei lá" />
           </Corousel>
         </Search>
+
+        <RestaurantCard />
       </Container>
 
       <FutureMap />
