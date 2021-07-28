@@ -8,13 +8,13 @@ import restaurant2 from '../../assets/restaurante-fake2.jpg';
 import restaurant3 from '../../assets/restaurante-fake3.jpg';
 import restaurant4 from '../../assets/restaurante-fake4.jpg';
 
-import { ImageCard, Modal, RestaurantCard } from '../../components';
+import { ImageCard, Map, Modal, RestaurantCard } from '../../components';
 
-import { CarouselTitle, Container, Corousel, FutureMap, Logo, Search, Wrapper } from './styles';
+import { CarouselTitle, Container, Corousel, Logo, Search, Wrapper } from './styles';
 
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
-  const [modalOpened, setModalOpened] = useState(true);
+  const [modalOpened, setModalOpened] = useState(false);
 
   const settings = {
     dots: false,
@@ -54,9 +54,9 @@ const Home = () => {
         <RestaurantCard />
       </Container>
 
-      <FutureMap />
+      <Map />
 
-      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} />
+      {/* <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} /> */}
     </Wrapper>
   );
 };
