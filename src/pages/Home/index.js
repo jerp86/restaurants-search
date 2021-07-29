@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from '@material/react-material-icon';
 
 import logo from '../../assets/logo.svg';
-import restaurant from '../../assets/restaurante-fake.png';
-import restaurant2 from '../../assets/restaurante-fake2.jpg';
-import restaurant3 from '../../assets/restaurante-fake3.jpg';
-import restaurant4 from '../../assets/restaurante-fake4.jpg';
+import fakeRestaurant from '../../assets/restaurante-fake.png';
 
 import { ImageCard, Map, Modal, RestaurantCard } from '../../components';
 
@@ -16,6 +14,7 @@ const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const [query, setQuery] = useState(null);
   const [modalOpened, setModalOpened] = useState(false);
+  const { restaurants } = useSelector((state) => state.restaurants);
 
   const settings = {
     dots: false,
@@ -51,23 +50,23 @@ const Home = () => {
 
           <CarouselTitle>Na sua Área</CarouselTitle>
           <Corousel {...settings}>
-            <ImageCard photo={restaurant} title="Nome sei lá" />
-            <ImageCard photo={restaurant2} title="Nome sei lá" />
-            <ImageCard photo={restaurant3} title="Nome sei lá" />
-            <ImageCard photo={restaurant4} title="Nome sei lá" />
-            <ImageCard photo={restaurant} title="Nome sei lá" />
-            <ImageCard photo={restaurant4} title="Nome sei lá" />
-            <ImageCard photo={restaurant3} title="Nome sei lá" />
-            <ImageCard photo={restaurant2} title="Nome sei lá" />
+            {restaurants.map((restaurant) => (
+              <ImageCard
+                photo={restaurant.photos ? restaurant.photos[0].getUrl() : fakeRestaurant}
+                title={restaurant.name}
+              />
+            ))}
           </Corousel>
         </Search>
 
-        <RestaurantCard />
+        {restaurants.map((restaurant) => (
+          <RestaurantCard restaurant={restaurant} />
+        ))}
       </Container>
 
       <Map query={query} />
 
-      {/* <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} /> */}
+      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} />
     </Wrapper>
   );
 };
