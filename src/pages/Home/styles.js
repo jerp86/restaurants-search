@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 export const Container = styled.aside`
   background-color: ${({ theme }) => theme.colors.background};
   width: 360px;
-  height: 100vh;
+  height: 98vh;
   overflow-y: auto;
 `;
 
@@ -22,7 +22,8 @@ export const Search = styled.section`
 `;
 
 export const Logo = styled.img`
-  margin-bottom: 16px;
+  margin: 16px;
+  max-width: fit-content;
 `;
 
 export const Corousel = styled(Slider)`
@@ -38,9 +39,4 @@ export const CarouselTitle = styled.h1`
   font-weight: 700;
   line-height: 150%;
   margin: 16px 0;
-`;
-
-export const FutureMap = styled.div`
-  flex: 1;
-  background-color: red;
 `;
