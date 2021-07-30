@@ -13,6 +13,7 @@ import { CarouselTitle, Container, Corousel, Logo, Search, Wrapper } from './sty
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const [query, setQuery] = useState(null);
+  const [placeId, setPlaceId] = useState(null);
   const [modalOpened, setModalOpened] = useState(false);
   const { restaurants } = useSelector((state) => state.restaurants);
 
@@ -31,6 +32,11 @@ const Home = () => {
     if (e.key === 'Enter') {
       setQuery(inputValue);
     }
+  }
+
+  function handleOpenModal(id) {
+    setPlaceId(id);
+    setModalOpened(true);
   }
 
   return (
@@ -62,11 +68,14 @@ const Home = () => {
         </Search>
 
         {restaurants.map((restaurant) => (
-          <RestaurantCard restaurant={restaurant} />
+          <RestaurantCard
+            restaurant={restaurant}
+            onClick={() => handleOpenModal(restaurant.place_id)}
+          />
         ))}
       </Container>
 
-      <Map query={query} />
+      <Map query={query} placeId={placeId} />
 
       <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} />
     </Wrapper>
