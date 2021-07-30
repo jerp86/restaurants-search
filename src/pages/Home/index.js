@@ -26,6 +26,7 @@ const Home = () => {
     slidesToScroll: 4,
     adaptiveHeight: true,
     arrows: false,
+    lazyLoad: 'ondemand',
   };
 
   function handleKeyPress(e) {
