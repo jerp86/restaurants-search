@@ -8,14 +8,23 @@ import fakeRestaurant from '../../assets/restaurante-fake.png';
 
 import { ImageCard, Map, Modal, RestaurantCard } from '../../components';
 
-import { CarouselTitle, Container, Corousel, Logo, Search, Wrapper } from './styles';
+import {
+  CarouselTitle,
+  Container,
+  Corousel,
+  Logo,
+  ModalContent,
+  ModalTitle,
+  Search,
+  Wrapper,
+} from './styles';
 
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const [query, setQuery] = useState(null);
   const [placeId, setPlaceId] = useState(null);
   const [modalOpened, setModalOpened] = useState(false);
-  const { restaurants } = useSelector((state) => state.restaurants);
+  const { restaurants, restaurantSelected } = useSelector((state) => state.restaurants);
 
   const settings = {
     dots: false,
@@ -78,7 +87,16 @@ const Home = () => {
 
       <Map query={query} placeId={placeId} />
 
-      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} />
+      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)}>
+        <ModalTitle>{restaurantSelected?.name}</ModalTitle>
+        <ModalContent>{restaurantSelected?.formatted_phone_number}</ModalContent>
+        <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
+        <ModalContent>
+          {restaurantSelected?.opening_hours?.open_now
+            ? 'Aberto agora 🤗️'
+            : 'Fechado neste momento 😭️'}
+        </ModalContent>
+      </Modal>
     </Wrapper>
   );
 };
