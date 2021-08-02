@@ -66,15 +66,21 @@ const Home = () => {
             />
           </TextField>
 
-          <CarouselTitle>Na sua Área</CarouselTitle>
-          <Corousel {...settings}>
-            {restaurants.map((restaurant) => (
-              <ImageCard
-                photo={restaurant.photos ? restaurant.photos[0].getUrl() : fakeRestaurant}
-                title={restaurant.name}
-              />
-            ))}
-          </Corousel>
+          {restaurants.length > 0 ? (
+            <>
+              <CarouselTitle>Na sua Área</CarouselTitle>
+              <Corousel {...settings}>
+                {restaurants.map((restaurant) => (
+                  <ImageCard
+                    photo={restaurant.photos ? restaurant.photos[0].getUrl() : fakeRestaurant}
+                    title={restaurant.name}
+                  />
+                ))}
+              </Corousel>
+            </>
+          ) : (
+            <Loader />
+          )}
         </Search>
 
         {restaurants.map((restaurant) => (
