@@ -6,7 +6,7 @@ import MaterialIcon from '@material/react-material-icon';
 import logo from '../../assets/logo.svg';
 import fakeRestaurant from '../../assets/restaurante-fake.png';
 
-import { ImageCard, Loader, Map, Modal, RestaurantCard } from '../../components';
+import { ImageCard, Loader, Map, Modal, RestaurantCard, Skeleton } from '../../components';
 
 import {
   CarouselTitle,
@@ -94,14 +94,25 @@ const Home = () => {
       <Map query={query} placeId={placeId} />
 
       <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)}>
-        <ModalTitle>{restaurantSelected?.name}</ModalTitle>
-        <ModalContent>{restaurantSelected?.formatted_phone_number}</ModalContent>
-        <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
-        <ModalContent>
-          {restaurantSelected?.opening_hours?.open_now
-            ? 'Aberto agora 🤗️'
-            : 'Fechado neste momento 😭️'}
-        </ModalContent>
+        {restaurantSelected ? (
+          <>
+            <ModalTitle>{restaurantSelected?.name}</ModalTitle>
+            <ModalContent>{restaurantSelected?.formatted_phone_number}</ModalContent>
+            <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
+            <ModalContent>
+              {restaurantSelected?.opening_hours?.open_now
+                ? 'Aberto agora 🤗️'
+                : 'Fechado neste momento 😭️'}
+            </ModalContent>
+          </>
+        ) : (
+          <>
+            <Skeleton width="10px" height="10px" />
+            <Skeleton width="10px" height="10px" />
+            <Skeleton width="10px" height="10px" />
+            <Skeleton width="10px" height="10px" />
+          </>
+        )}
       </Modal>
     </Wrapper>
   );
