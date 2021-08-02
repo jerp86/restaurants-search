@@ -6,7 +6,7 @@ import MaterialIcon from '@material/react-material-icon';
 import logo from '../../assets/logo.svg';
 import fakeRestaurant from '../../assets/restaurante-fake.png';
 
-import { ImageCard, Map, Modal, RestaurantCard } from '../../components';
+import { ImageCard, Loader, Map, Modal, RestaurantCard } from '../../components';
 
 import {
   CarouselTitle,
