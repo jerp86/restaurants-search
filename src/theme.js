@@ -6,6 +6,7 @@ const theme = {
     success: '#135E01',
     white: '#FFFFFF',
     star: '#E7711C',
+    gray: 'gray',
   },
   fonts: {
     regular: 'Roboto, sans-serif',
