@@ -51,10 +51,7 @@ export const ModalTitle = styled.p`
   font-weight: 700;
 `;
 
-export const ModalContent = styled.p`
-  margin-bottom: 8px;
-  font-family: ${({ theme }) => theme.fonts.regular};
-  color: ${({ theme }) => theme.colors.text};
+export const ModalContent = styled(ModalTitle)`
   letter-spacing: 0.11px;
   line-height: 19px;
   font-size: 16px;
