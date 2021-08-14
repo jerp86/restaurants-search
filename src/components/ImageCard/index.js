@@ -4,7 +4,7 @@ import Skeleton from '../Skeleton';
 
 import { Card, Title } from './styles';
 
-const ImageCard = ({ photo, title }) => {
+const ImageCard = ({ photo, title, ...rest }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const ImageCard = ({ photo, title }) => {
   return (
     <>
       {imageLoaded ? (
-        <Card photo={photo}>
+        <Card photo={photo} {...rest}>
           <Title>{title}</Title>
         </Card>
       ) : (

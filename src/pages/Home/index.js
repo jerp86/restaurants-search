@@ -72,8 +72,10 @@ const Home = () => {
               <Corousel {...settings}>
                 {restaurants.map((restaurant) => (
                   <ImageCard
+                    key={restaurant.place_id}
                     photo={restaurant.photos ? restaurant.photos[0].getUrl() : fakeRestaurant}
                     title={restaurant.name}
+                    onClick={() => handleOpenModal(restaurant.place_id)}
                   />
                 ))}
               </Corousel>
