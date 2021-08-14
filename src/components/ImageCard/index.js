@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import { pxToRem } from '../../utils';
+
 import Skeleton from '../Skeleton';
 
 import { Card, Title } from './styles';
@@ -20,7 +22,7 @@ const ImageCard = ({ photo, title, ...rest }) => {
           <Title>{title}</Title>
         </Card>
       ) : (
-        <Skeleton width="90px" height="90px" />
+        <Skeleton width={pxToRem(90)} height={pxToRem(90)} />
       )}
     </>
   );

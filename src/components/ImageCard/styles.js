@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
+import { pxToRem } from '../../utils';
+
 export const Card = styled.div`
   display: flex;
   justify-content: center;
 
-  width: 90px;
-  height: 90px;
-  border-radius: 6px;
+  width: ${pxToRem(90)};
+  height: ${pxToRem(90)};
+  border-radius: ${pxToRem(6)};
 
   background-image: url(${(props) => props.photo});
   background-size: cover;
@@ -14,9 +16,9 @@ export const Card = styled.div`
 
 export const Title = styled.span`
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-size: 16px;
+  font-size: ${pxToRem(16)};
   color: ${({ theme }) => theme.colors.white};
   text-align: center;
-  margin-top: 8px;
-  margin-left: 4px;
+  margin-top: ${pxToRem(8)};
+  margin-left: ${pxToRem(4)};
 `;

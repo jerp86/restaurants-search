@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from '@material/react-material-icon';
 
+import { pxToRem } from '../../utils';
 import logo from '../../assets/logo.svg';
 import fakeRestaurant from '../../assets/restaurante-fake.png';
 
@@ -109,13 +110,13 @@ const Home = () => {
           </>
         ) : (
           <>
-            <Skeleton width="10px" height="10px" />
-            <Skeleton width="10px" height="10px" />
-            <Skeleton width="10px" height="10px" />
-            <Skeleton width="10px" height="10px" />
-          </>
-        )}
-      </Modal>
+              <Skeleton width={pxToRem(10)} height={pxToRem(10)} />
+              <Skeleton width={pxToRem(10)} height={pxToRem(10)} />
+              <Skeleton width={pxToRem(10)} height={pxToRem(10)} />
+              <Skeleton width={pxToRem(10)} height={pxToRem(10)} />
+            </>
+          )}
+        </Modal>
     </Wrapper>
   );
 };

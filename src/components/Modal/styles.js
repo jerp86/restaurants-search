@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { pxToRem } from '../../utils';
+
 export const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -26,10 +28,10 @@ export const Dialog = styled.div`
   justify-content: space-between;
 
   max-height: calc(100% - 144px);
-  width: 500px;
-  padding: 24px;
+  width: ${pxToRem(500)};
+  padding: ${pxToRem(24)};
 
   background-color: ${({ theme }) => theme.colors.white};
-  box-shadow: 0 0 32px rgba(78, 89, 131, 0.2);
-  border-radius: 8px;
+  box-shadow: 0 0 ${pxToRem(32)} rgba(78, 89, 131, 0.2);
+  border-radius: ${pxToRem(8)};
 `;

@@ -6,6 +6,7 @@ import { Address, Restaurant, RestaurantInfo, RestaurantPhoto, Title } from './s
 
 import fakeRestaurant from '../../assets/restaurante-fake.png';
 import theme from '../../theme';
+import { pxToRem } from '../../utils';
 
 const RestaurantCard = ({ restaurant, onClick }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -31,7 +32,7 @@ const RestaurantCard = ({ restaurant, onClick }) => {
         imageLoaded={imageLoaded}
       />
 
-      {!imageLoaded && <Skeleton width="100px" height="100px" />}
+      {!imageLoaded && <Skeleton width={pxToRem(100)} height={pxToRem(100)} />}
     </Restaurant>
   );
 };

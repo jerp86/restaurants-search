@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
+import { pxToRem } from '../../utils';
+
 const KeyFrameLoading = keyframes`
   0% {
     opacity: 0.5,
@@ -12,8 +14,8 @@ const KeyFrameLoading = keyframes`
 
 const LoadingSkeleton = styled.div`
   background-color: ${({ theme }) => theme.colors.gray};
-  border-radius: 6px;
-  margin-bottom: 8px;
+  border-radius: ${pxToRem(6)};
+  margin-bottom: ${pxToRem(8)};
   min-width: ${(props) => props.width};
   height: ${(props) => props.height};
   animation: ${KeyFrameLoading} 500ms infinite alternate;
