@@ -61,6 +61,7 @@ const Home = () => {
             trailingIcon={<MaterialIcon role="button" icon="search" />}
             outlined>
             <Input
+              type="text"
               value={inputValue}
               onKeyPress={handleKeyPress}
               onChange={(e) => setInputValue(e.target.value)}
@@ -88,28 +89,26 @@ const Home = () => {
 
         {restaurants.map((restaurant) => (
           <RestaurantCard
+            key={restaurant.place_id}
             restaurant={restaurant}
             onClick={() => handleOpenModal(restaurant.place_id)}
           />
         ))}
-      </Container>
 
-      <Map query={query} placeId={placeId} />
-
-      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)}>
-        {restaurantSelected ? (
-          <>
-            <ModalTitle>{restaurantSelected?.name}</ModalTitle>
-            <ModalContent>{restaurantSelected?.formatted_phone_number}</ModalContent>
-            <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
-            <ModalContent>
-              {restaurantSelected?.opening_hours?.open_now
-                ? 'Aberto agora 🤗️'
-                : 'Fechado neste momento 😭️'}
-            </ModalContent>
-          </>
-        ) : (
-          <>
+        <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)}>
+          {restaurantSelected ? (
+            <>
+              <ModalTitle>{restaurantSelected?.name}</ModalTitle>
+              <ModalContent>{restaurantSelected?.formatted_phone_number}</ModalContent>
+              <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
+              <ModalContent>
+                {restaurantSelected?.opening_hours?.open_now
+                  ? 'Aberto agora 🤗️'
+                  : 'Fechado neste momento 😭️'}
+              </ModalContent>
+            </>
+          ) : (
+            <>
               <Skeleton width={pxToRem(10)} height={pxToRem(10)} />
               <Skeleton width={pxToRem(10)} height={pxToRem(10)} />
               <Skeleton width={pxToRem(10)} height={pxToRem(10)} />
@@ -117,6 +116,9 @@ const Home = () => {
             </>
           )}
         </Modal>
+      </Container>
+
+      <Map query={query} placeId={placeId} />
     </Wrapper>
   );
 };
