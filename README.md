@@ -35,9 +35,11 @@ Construção de sistema web de busca de restaurantes, parecido com o serviço qu
 
 ## :interrobang: Motivo
 
-Esse buscador foi desenvolvido usando React.JS, Styled-Components e API do Google.
+Esse buscador foi desenvolvido usando React.JS, Redux, Styled-Components e API do Google.
 
 Projeto desenvolvido acompanhando [Patrick Narciso](https://github.com/patrick-narciso), através do bootcamp #LocalizaLabs React Developer, uma parceria entre [Órbi Academy Techboost](https://digitalinnovation.one/tech-boost) e [Digital Innovation One](https://digitalinnovation.one/).
+
+Além do que foi demostrado pelo professor, foi adicionado responsividade, click nos cards do carrossel para apresentar as informações, ajustes em alguns pontos da tela.
 
 ## :seedling: Requisitos Mínimos
 
